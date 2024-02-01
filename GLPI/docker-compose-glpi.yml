@@ -4,17 +4,17 @@ services:
     image: "jonas556440/glpi"
     container_name: "glpi"
     environment:
-      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=R00T#MhXw#T3zxfF
       - MYSQL_DATABASE=glpidb
       - MYSQL_USER=glpiuser
-      - MYSQL_PASSWORD=123456
+      - MYSQL_PASSWORD=GLPI#MhXw#T3zxfF
     volumes:
       - ./glpi_data:/var/www/html/glpi
     networks:
       - proxy
     labels:
       - traefik.enable=true
-      - traefik.http.routers.glpi.rule=Host(`glpi.localhost.local`)
+      - traefik.http.routers.glpi.rule=Host(`localhost`)
       - traefik.http.routers.glpi.tls=true
       - traefik.http.routers.glpi.entrypoints=websecure # definindo o ponto de entrada, que será utilizado pelo serviço
       - traefik.http.routers.glpi.service=glpi # especificando um serviço para a rota
